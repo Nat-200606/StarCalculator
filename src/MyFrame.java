@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.Objects;
 
 public class MyFrame extends JFrame implements ActionListener {
-    ButtonBase soma, subtrai, divide, multiplica, potencia,igual, reset;
+    ButtonBase soma, subtrai, divide, multiplica, potencia,igual, reset, decimal;
     ButtonBase[] numeros = new ButtonBase[10];
     JLabel output;
     char operation;
@@ -74,6 +74,8 @@ public class MyFrame extends JFrame implements ActionListener {
         potencia.addActionListener(this);
         igual = new ButtonBase("=");
         igual.addActionListener(this);
+        decimal = new ButtonBase(".");
+        decimal.addActionListener(this);
 
         reset = new ButtonBase("AC");
         reset.addActionListener(this);
@@ -87,8 +89,9 @@ public class MyFrame extends JFrame implements ActionListener {
         buttonPanel.add(divide);
         buttonPanel.add(multiplica);
         buttonPanel.add(potencia);
-        buttonPanel.add(igual);
+        buttonPanel.add(decimal);
         buttonPanel.add(reset);
+        buttonPanel.add(igual);
 
         this.add(pane);
         this.setVisible(true);
@@ -130,6 +133,9 @@ public class MyFrame extends JFrame implements ActionListener {
         if (e.getSource().equals(reset)){
             output.setText("");
             enableOperations();
+        }
+        if (e.getSource().equals(decimal)){
+            output.setText(output.getText()+".");
         }
         if (e.getSource().equals(igual)){
             String text = output.getText();
