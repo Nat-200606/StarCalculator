@@ -56,6 +56,7 @@ public class MyFrame extends JFrame implements ActionListener {
         this.setLayout(null);
         this.setBounds(320,40,896,760);
         this.setIconImage(star.getImage());
+        this.setResizable(false);
 
         for (int x = 0; x < 10; x++){
             numeros[x] =new ButtonBase(String.valueOf(x));
