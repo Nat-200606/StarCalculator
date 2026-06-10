@@ -26,12 +26,15 @@ public class MyFrame extends JFrame implements ActionListener {
                 getClass().getResourceAsStream("/Minecraft.ttf")
         ).deriveFont(60f);
 
-        JLayeredPane pane = new JLayeredPane();
-        pane.setBounds(0,0,896,896);
 
         URL backGroundURL = getClass().getResource("/starback2.png");
         ImageIcon backGround = new ImageIcon(backGroundURL);
 
+        URL starURL = getClass().getResource("/starbutton.png");
+        ImageIcon star = new ImageIcon(starURL);
+
+        JLayeredPane pane = new JLayeredPane();
+        pane.setBounds(0,0,896,896);
 
         JPanel buttonPanel = new JPanel(new GridLayout(3,6,10,6));
         buttonPanel.setBounds(20,170,840,460);
@@ -52,6 +55,7 @@ public class MyFrame extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setBounds(320,40,896,760);
+        this.setIconImage(star.getImage());
 
         for (int x = 0; x < 10; x++){
             numeros[x] =new ButtonBase(String.valueOf(x));
