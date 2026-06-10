@@ -129,8 +129,8 @@ public class MyFrame extends JFrame implements ActionListener {
         }
         if (e.getSource().equals(igual)){
             String text = output.getText();
-            double n1 = Integer.parseInt(text.substring(0,text.indexOf(operation)));
-            double n2 = Integer.parseInt(text.substring(text.indexOf(operation)+1));
+            double n1 = Double.parseDouble(text.substring(0,text.indexOf(operation)));
+            double n2 = Double.parseDouble(text.substring(text.indexOf(operation)+1));
             enableOperations();
             switch (operation){
                 case '+':
